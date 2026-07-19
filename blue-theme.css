@@ -35,7 +35,7 @@ section.lead {
 }
 
 section.lead h1 {
-  color: #ffffff;
+  color: #ffffff !important;
   font-size: 2.4em;
   font-weight: 700;
   margin-bottom: 0.2em;
@@ -43,13 +43,13 @@ section.lead h1 {
 }
 
 section.lead h2 {
-  color: #e3f2fd;
+  color: #e3f2fd !important;
   font-size: 1.2em;
   font-weight: 400;
 }
 
 section.lead strong {
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
 section.lead header,
@@ -78,21 +78,26 @@ img.logo {
   opacity: 0.9;
 }
 
-/* Headings */
+/* Headings.
+ * `!important` is required: Marp's built-in `default` theme scopes its heading
+ * color rules with a high-specificity ID selector
+ * (div#:$p > svg > foreignObject > section :is(h1, marp-h1)). Because this file
+ * is layered via a `style` @import rather than registered as a theme, its class
+ * selectors cannot out-specify that, so the brand colors must be forced. */
 h1 {
-  color: var(--color-primary);
+  color: var(--color-primary) !important;
   font-size: 1.8em;
   border-bottom: 3px solid var(--color-accent);
   padding-bottom: 0.2em;
 }
 
 h2 {
-  color: var(--color-primary-dark);
+  color: var(--color-primary-dark) !important;
   font-size: 1.4em;
 }
 
 h3 {
-  color: var(--color-text);
+  color: var(--color-text) !important;
   font-size: 1.1em;
 }
 
@@ -199,18 +204,18 @@ section.divider {
 }
 
 section.divider h1 {
-  color: #ffffff;
+  color: #ffffff !important;
   border-bottom: 3px solid var(--color-accent);
   font-size: 2.2em;
 }
 
 section.divider h2 {
-  color: #e3f2fd;
+  color: #e3f2fd !important;
   font-size: 1.3em;
 }
 
 section.divider strong {
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
 section.divider header,
@@ -220,17 +225,17 @@ section.divider footer {
 
 section.divider code {
   background-color: rgba(255, 255, 255, 0.2);
-  color: #ffffff;
+  color: #ffffff !important;
   border-color: rgba(255, 255, 255, 0.3);
 }
 
 /* Emphasis styles */
 strong {
-  color: var(--color-primary-dark);
+  color: var(--color-primary-dark) !important;
 }
 
 em {
-  color: var(--color-text-light);
+  color: var(--color-text-light) !important;
 }
 
 /* Image sizing helpers */
