@@ -193,14 +193,15 @@ section::after {
   padding: 0 !important;
 }
 
-/* Section divider slide */
+/* Section divider slide.
+ * Mirror the lead slide's centering: keep Marp's default section layout and use
+ * `align-content: center` rather than a `display: flex` override, which does not
+ * vertically center against the default theme's grid. */
 section.divider {
   background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
   color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center !important;
   text-align: center;
+  align-content: center !important;
 }
 
 section.divider h1 {
