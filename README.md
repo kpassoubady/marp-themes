@@ -13,37 +13,55 @@ A generic blue Marp theme for course slides and technical presentations.
 
 ## Usage
 
-### VS Code
+Serve assets through the jsDelivr CDN, not `raw.githubusercontent.com`. GitHub raw
+returns `Content-Type: text/plain` with `nosniff`, so browser-based Marp preview
+panes (for example cloud IDEs) refuse to apply the stylesheet. jsDelivr returns
+`text/css` with CORS enabled, which every renderer accepts.
 
-Add the raw theme URL to your workspace settings:
+### Self-contained slide (recommended)
 
-```json
-{
-  "markdown.marp.themes": [
-    "https://raw.githubusercontent.com/kpassoubady/marp-themes/main/blue-theme.css"
-  ],
-  "markdown.marp.html": "all"
-}
-```
-
-### Slide front matter
+Import the theme directly in the deck front matter. This needs no theme
+registration, so it renders in VS Code and cloud-hosted preview panes alike.
 
 ```yaml
 ---
 marp: true
-theme: blue-theme
+theme: default
 paginate: true
+style: |
+  @import url("https://cdn.jsdelivr.net/gh/kpassoubady/marp-themes@main/blue-theme.css");
 ---
 ```
 
 ### Logo on lead and divider slides
 
 ```html
-<img class="logo" src="https://raw.githubusercontent.com/kpassoubady/marp-themes/main/logo-white.svg" />
+<img class="logo" src="https://cdn.jsdelivr.net/gh/kpassoubady/marp-themes@main/logo-white.svg" />
+```
+
+### VS Code (optional registration)
+
+```json
+{
+  "markdown.marp.themes": [
+    "https://cdn.jsdelivr.net/gh/kpassoubady/marp-themes@main/blue-theme.css"
+  ],
+  "markdown.marp.html": "all"
+}
 ```
 
 ### Marp CLI
 
 ```bash
-marp --pdf --theme blue-theme.css --allow-local-files slides.md
+marp --pdf --allow-local-files slides.md
+```
+
+The deck's `style` import supplies the theme, so no `--theme` flag is required.
+
+## Cache note
+
+jsDelivr caches `@main` for up to 7 days. After pushing an update, purge with:
+
+```
+https://purge.jsdelivr.net/gh/kpassoubady/marp-themes@main/blue-theme.css
 ```

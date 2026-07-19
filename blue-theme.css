@@ -1,6 +1,11 @@
 /* @theme blue-theme */
 
-@import 'default';
+/*
+ * Layered on top of Marp's built-in `default` theme.
+ * Decks import this file via the `style` front-matter directive, so it must NOT
+ * `@import 'default'` (that only resolves inside a registered Marp theme).
+ * Set `theme: default` in the deck to provide the base layout.
+ */
 
 :root {
   --color-primary: #1a73e8;
