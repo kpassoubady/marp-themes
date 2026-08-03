@@ -248,7 +248,7 @@ section.demo::before {
   content: "DEMO";
   position: absolute;
   top: 30px;
-  right: 40px;
+  left: 60px;
   background: var(--color-accent);
   color: #ffffff;
   font-size: 0.6em;
