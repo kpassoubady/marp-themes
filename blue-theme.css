@@ -249,6 +249,7 @@ section.demo::before {
   position: absolute;
   top: 20px;
   left: 60px;
+  right: auto;
   background: var(--color-accent);
   color: #ffffff;
   font-size: 0.6em;
