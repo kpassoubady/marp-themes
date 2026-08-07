@@ -259,6 +259,62 @@ section.demo::before {
   border-radius: 3px;
 }
 
+/* Discussion slide — question/clarify step.
+ * Purple left accent, light purple gradient, and a "DISCUSSION" badge.
+ * Signals "speak up now" without the full-bleed background of .divider. */
+section.discussion {
+  border-left: 6px solid #7b1fa2;
+  background: linear-gradient(90deg, #f3e5f5 0%, #ffffff 12%);
+  padding-left: 54px; /* 60px - 6px border */
+}
+
+section.discussion h1 {
+  font-size: 1.6em;
+}
+
+section.discussion::before {
+  content: "DISCUSSION";
+  position: absolute;
+  top: 20px;
+  left: 60px;
+  right: auto;
+  background: #7b1fa2;
+  color: #ffffff;
+  font-size: 0.6em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 3px 10px;
+  border-radius: 3px;
+}
+
+/* Discussion-answer slide — the resolution step.
+ * Green left accent, light green gradient, and an "ANSWER" badge.
+ * The green signals resolution: the discussion is settled. */
+section.discussion-answer {
+  border-left: 6px solid #2e7d32;
+  background: linear-gradient(90deg, #e8f5e9 0%, #ffffff 12%);
+  padding-left: 54px; /* 60px - 6px border */
+}
+
+section.discussion-answer h1 {
+  font-size: 1.6em;
+}
+
+section.discussion-answer::before {
+  content: "ANSWER";
+  position: absolute;
+  top: 20px;
+  left: 60px;
+  right: auto;
+  background: #2e7d32;
+  color: #ffffff;
+  font-size: 0.6em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 3px 10px;
+  border-radius: 3px;
+}
+
 /* Emphasis styles */
 strong {
   color: var(--color-primary-dark) !important;
