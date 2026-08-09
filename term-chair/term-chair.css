@@ -42,10 +42,19 @@ section.lead {
 
 section.lead h1 {
   color: #fdf9f0 !important;
-  font-size: 2.4em;
+  font-size: 1.7em;
   font-weight: 700;
   margin-bottom: 0.2em;
   border-bottom: 3px solid var(--color-accent);
+  line-height: 1.3;
+}
+
+/* Word-root chips read as inline boxes inside a lead h1 (e.g. a "term = a + b"
+ * formula title). Shrink them relative to the already-reduced lead h1 size so
+ * two-root formulas fit on one line and three-root formulas wrap cleanly. */
+section.lead h1 .word-root {
+  font-size: 0.6em;
+  padding: 0.15em 0.5em;
 }
 
 section.lead h2 {
@@ -181,14 +190,23 @@ li {
   margin-bottom: 4px;
 }
 
-/* Header */
+/* Header — running right-aligned label naming the current section/part.
+ * Set via the `header:` front-matter directive (or a per-slide
+ * `<!-- header: ... -->` comment). Hidden on lead/divider slides (see above),
+ * which use the chapter/part badge instead. */
 header {
   left: auto !important;
   right: 60px !important;
   text-align: right !important;
+  font-size: 0.55em;
+  font-weight: 700;
+  color: var(--color-text-light);
+  letter-spacing: 0.02em;
 }
 
-/* Footer */
+/* Footer — running right-aligned label, typically the book/course title. Set
+ * via the `footer:` front-matter directive (or a per-slide
+ * `<!-- footer: ... -->` comment). */
 footer {
   font-size: 0.5em;
   color: var(--color-text-light);
@@ -196,6 +214,54 @@ footer {
   right: 60px !important;
   bottom: 20px !important;
   text-align: right !important;
+}
+
+/* Lead slides hide header/footer by default (see above) since the dark
+ * gradient background makes the ink-brown footer color unreadable and the
+ * centered layout has no room for a running header. Re-enable just the
+ * footer, in a light color that reads against the dark background, so the
+ * book/course title still appears consistently on title/closing slides. */
+section.lead footer {
+  display: block !important;
+  color: rgba(253, 249, 240, 0.75) !important;
+}
+
+/* Chapter/part badge pair — used on lead slides in place of the running
+ * header, since a header would be hidden or unreadable there. Usage:
+ *   <div class="badge-row">
+ *     <span class="badge chapter">அத்தியாயம் 1</span>
+ *     <span class="badge part">பகுதி 1</span>
+ *   </div>
+ * Place directly after the `<!-- _class: lead -->` marker. */
+.badge-row {
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.6em;
+  z-index: 2;
+}
+
+.badge-row .badge {
+  display: inline-block;
+  padding: 0.3em 1em;
+  border-radius: 999px;
+  font-size: 0.6em;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.badge-row .badge.chapter {
+  background: rgba(255, 255, 255, 0.12);
+  color: #f0dfa8;
+  border: 1px solid var(--color-accent);
+}
+
+.badge-row .badge.part {
+  background: var(--color-accent);
+  color: #2b2118;
 }
 
 /* Slide numbers (Pagination) */
