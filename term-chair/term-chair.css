@@ -1,25 +1,31 @@
-/* @theme blue-theme */
+/* @theme term-chair */
 
 /*
  * Layered on top of Marp's built-in `default` theme.
  * Decks import this file via the `style` front-matter directive, so it must NOT
  * `@import 'default'` (that only resolves inside a registered Marp theme).
  * Set `theme: default` in the deck to provide the base layout.
+ *
+ * Palette drawn from the Ganga Emerging Technology Terminology Research Chair
+ * flyer: parchment background, deep wine/maroon headings, antique gold accents,
+ * ink-brown body text. Built for short (~15 min) glossary teach-back sessions
+ * where anyone presents a book/ chapter's terms to the nano chair group.
  */
 
 :root {
-  --color-primary: #1a73e8;
-  --color-primary-dark: #0d47a1;
-  --color-accent: #00bfa5;
-  --color-bg: #ffffff;
-  --color-bg-code: #f5f7fa;
-  --color-text: #1e293b;
-  --color-text-light: #64748b;
-  --color-border: #e2e8f0;
+  --color-primary: #8f2438;
+  --color-primary-dark: #5c1526;
+  --color-accent: #c9a227;
+  --color-navy: #16233e;
+  --color-bg: #fdf9f0;
+  --color-bg-code: #f6efdc;
+  --color-text: #2b2118;
+  --color-text-light: #6b5d4f;
+  --color-border: #e3d4b0;
 }
 
 section {
-  font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Noto Sans Tamil', 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
   color: var(--color-text);
   background-color: var(--color-bg);
   padding: 40px 60px 20px 60px;
@@ -28,14 +34,14 @@ section {
 
 /* Title slide */
 section.lead {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-  color: #ffffff;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-navy) 100%);
+  color: #fdf9f0;
   text-align: center;
   align-content: center !important;
 }
 
 section.lead h1 {
-  color: #ffffff !important;
+  color: #fdf9f0 !important;
   font-size: 2.4em;
   font-weight: 700;
   margin-bottom: 0.2em;
@@ -43,7 +49,7 @@ section.lead h1 {
 }
 
 section.lead h2 {
-  color: #e3f2fd !important;
+  color: #f0dfa8 !important;
   font-size: 1.2em;
   font-weight: 400;
 }
@@ -74,8 +80,8 @@ img.logo {
   position: absolute;
   bottom: 60px;
   right: 40px;
-  width: 160px;
-  opacity: 0.9;
+  width: 140px;
+  opacity: 0.95;
 }
 
 /* Headings.
@@ -97,7 +103,7 @@ h2 {
 }
 
 h3 {
-  color: var(--color-text) !important;
+  color: var(--color-navy) !important;
   font-size: 1.1em;
 }
 
@@ -133,7 +139,7 @@ table {
 
 th {
   background-color: var(--color-primary);
-  color: #ffffff;
+  color: #fdf9f0;
   padding: 10px 14px;
   text-align: left;
 }
@@ -144,13 +150,13 @@ td {
 }
 
 tr:nth-child(even) {
-  background-color: #f8fafc;
+  background-color: #f6efdc;
 }
 
 /* Blockquotes — used for notes/callouts */
 blockquote {
   border-left: 4px solid var(--color-accent);
-  background-color: #f0fdf9;
+  background-color: #fbf3da;
   padding: 10px 12px;
   margin: 16px 0;
   border-radius: 0 8px 8px 0;
@@ -198,20 +204,20 @@ section::after {
  * `align-content: center` rather than a `display: flex` override, which does not
  * vertically center against the default theme's grid. */
 section.divider {
-  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
-  color: #ffffff;
+  background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-primary) 100%);
+  color: #fdf9f0;
   text-align: center;
   align-content: center !important;
 }
 
 section.divider h1 {
-  color: #ffffff !important;
+  color: #fdf9f0 !important;
   border-bottom: 3px solid var(--color-accent);
   font-size: 2.2em;
 }
 
 section.divider h2 {
-  color: #e3f2fd !important;
+  color: #f0dfa8 !important;
   font-size: 1.3em;
 }
 
@@ -225,9 +231,26 @@ section.divider footer {
 }
 
 section.divider code {
-  background-color: rgba(255, 255, 255, 0.2);
-  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #fdf9f0 !important;
   border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Term slide — the core "one term at a time" layout for the 15-min teach-back
+ * format. A gold left rule sets the glossary term apart from ordinary content
+ * slides without the full-bleed background of .divider. */
+section.term {
+  border-left: 6px solid var(--color-accent);
+  background: linear-gradient(90deg, #fbf3da 0%, #fdf9f0 12%);
+  padding-left: 54px; /* 60px - 6px border */
+}
+
+section.term h1 {
+  font-size: 1.6em;
+}
+
+section.term h1 .tamil {
+  color: var(--color-primary) !important;
 }
 
 /* Demo instruction slide.
@@ -235,8 +258,8 @@ section.divider code {
  * border, a light gradient, and a "DEMO" badge — without the full-bleed
  * background of .divider. */
 section.demo {
-  border-left: 6px solid var(--color-accent);
-  background: linear-gradient(90deg, #e0f7f5 0%, #ffffff 12%);
+  border-left: 6px solid var(--color-navy);
+  background: linear-gradient(90deg, #e8eaf1 0%, #fdf9f0 12%);
   padding-left: 54px; /* 60px - 6px border */
 }
 
@@ -250,8 +273,8 @@ section.demo::before {
   top: 20px;
   left: 60px;
   right: auto;
-  background: var(--color-accent);
-  color: #ffffff;
+  background: var(--color-navy);
+  color: #fdf9f0;
   font-size: 0.6em;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -260,11 +283,11 @@ section.demo::before {
 }
 
 /* Discussion slide — question/clarify step.
- * Purple left accent, light purple gradient, and a "DISCUSSION" badge.
+ * Muted plum left accent, light plum gradient, and a "DISCUSSION" badge.
  * Signals "speak up now" without the full-bleed background of .divider. */
 section.discussion {
   border-left: 6px solid #7b1fa2;
-  background: linear-gradient(90deg, #f3e5f5 0%, #ffffff 12%);
+  background: linear-gradient(90deg, #f3e5f5 0%, #fdf9f0 12%);
   padding-left: 54px; /* 60px - 6px border */
 }
 
@@ -288,11 +311,11 @@ section.discussion::before {
 }
 
 /* Discussion-answer slide — the resolution step.
- * Green left accent, light green gradient, and an "ANSWER" badge.
+ * Deep green left accent, light green gradient, and an "ANSWER" badge.
  * The green signals resolution: the discussion is settled. */
 section.discussion-answer {
   border-left: 6px solid #2e7d32;
-  background: linear-gradient(90deg, #e8f5e9 0%, #ffffff 12%);
+  background: linear-gradient(90deg, #e8f5e9 0%, #fdf9f0 12%);
   padding-left: 54px; /* 60px - 6px border */
 }
 
@@ -316,11 +339,11 @@ section.discussion-answer::before {
 }
 
 /* Chat-check slide — chat poll question step.
- * Blue left accent, light blue gradient, and a "CHAT CHECK" badge.
- * Signals "type your answer in the chat now." */
+ * Gold left accent (matches the flyer's gold frame), light gold gradient, and
+ * a "CHAT CHECK" badge. Signals "type your answer in the chat now." */
 section.chat-check {
-  border-left: 6px solid #1a73e8;
-  background: linear-gradient(90deg, #e3f2fd 0%, #ffffff 12%);
+  border-left: 6px solid var(--color-accent);
+  background: linear-gradient(90deg, #fbf3da 0%, #fdf9f0 12%);
   padding-left: 54px; /* 60px - 6px border */
 }
 
@@ -334,8 +357,8 @@ section.chat-check::before {
   top: 20px;
   left: 60px;
   right: auto;
-  background: #1a73e8;
-  color: #ffffff;
+  background: var(--color-accent);
+  color: #2b2118;
   font-size: 0.6em;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -344,11 +367,11 @@ section.chat-check::before {
 }
 
 /* Chat-check-answer slide — the resolution step.
- * Green left accent, light green gradient, and an "ANSWER" badge.
+ * Deep green left accent, light green gradient, and an "ANSWER" badge.
  * Same resolution signal as discussion-answer. */
 section.chat-check-answer {
   border-left: 6px solid #2e7d32;
-  background: linear-gradient(90deg, #e8f5e9 0%, #ffffff 12%);
+  background: linear-gradient(90deg, #e8f5e9 0%, #fdf9f0 12%);
   padding-left: 54px; /* 60px - 6px border */
 }
 
@@ -372,11 +395,11 @@ section.chat-check-answer::before {
 }
 
 /* Chat-waterfall slide — open-ended question step.
- * Amber left accent, light amber gradient, and a "CHAT WATERFALL" badge.
+ * Wine/maroon left accent, light wine gradient, and a "CHAT WATERFALL" badge.
  * Signals "type but don't hit enter — wait for the countdown." */
 section.chat-waterfall {
-  border-left: 6px solid #e65100;
-  background: linear-gradient(90deg, #fff3e0 0%, #ffffff 12%);
+  border-left: 6px solid var(--color-primary);
+  background: linear-gradient(90deg, #f7e6ea 0%, #fdf9f0 12%);
   padding-left: 54px; /* 60px - 6px border */
 }
 
@@ -390,7 +413,7 @@ section.chat-waterfall::before {
   top: 20px;
   left: 60px;
   right: auto;
-  background: #e65100;
+  background: var(--color-primary);
   color: #ffffff;
   font-size: 0.6em;
   font-weight: 700;
@@ -400,11 +423,11 @@ section.chat-waterfall::before {
 }
 
 /* Chat-waterfall-answer slide — key discussion points.
- * Green left accent, light green gradient, and a "KEY POINTS" badge.
+ * Deep green left accent, light green gradient, and a "KEY POINTS" badge.
  * Distinct from ANSWER since there's no single correct response. */
 section.chat-waterfall-answer {
   border-left: 6px solid #2e7d32;
-  background: linear-gradient(90deg, #e8f5e9 0%, #ffffff 12%);
+  background: linear-gradient(90deg, #e8f5e9 0%, #fdf9f0 12%);
   padding-left: 54px; /* 60px - 6px border */
 }
 

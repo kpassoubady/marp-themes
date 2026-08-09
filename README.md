@@ -1,6 +1,14 @@
-# Marp Blue Theme
+# Marp Themes
+
+## Blue Theme
 
 A generic blue Marp theme for course slides and technical presentations.
+
+## Term Chair Theme
+
+A parchment-and-gold Marp theme for glossary teach-back sessions, built for the
+Ganga Emerging Technology Terminology Research Chair. See
+[`term-chair/README.md`](term-chair/README.md).
 
 ## Files
 
