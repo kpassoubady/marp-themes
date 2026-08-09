@@ -52,6 +52,15 @@ section.lead strong {
   color: #ffffff !important;
 }
 
+/* Plain paragraph/list text has no dedicated color rule elsewhere, so it falls
+ * through to Marp's default theme, which scopes its own (dark) text color with
+ * a high-specificity selector that outranks `section.lead { color: ... }`.
+ * Force the light color here the same way h1/h2/strong already do. */
+section.lead p,
+section.lead li {
+  color: #ffffff !important;
+}
+
 section.lead header,
 section.lead footer {
   display: none !important;
@@ -216,6 +225,13 @@ section.divider h2 {
 }
 
 section.divider strong {
+  color: #ffffff !important;
+}
+
+/* Same fix as section.lead: plain paragraph/list text otherwise inherits
+ * Marp's default (dark) text color instead of this theme's light one. */
+section.divider p,
+section.divider li {
   color: #ffffff !important;
 }
 
