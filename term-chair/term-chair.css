@@ -264,6 +264,11 @@ section.lead footer {
   color: #2b2118;
 }
 
+.badge-row .badge.tnc {
+  background: #64b5f6;
+  color: #0d2137;
+}
+
 /* Slide numbers (Pagination) */
 section::after {
   font-size: 0.5em !important;
