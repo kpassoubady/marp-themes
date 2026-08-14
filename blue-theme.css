@@ -98,6 +98,8 @@ h1 {
   font-size: 1.8em;
   border-bottom: 3px solid var(--color-accent);
   padding-bottom: 0.2em;
+  margin-top: 0;
+  margin-bottom: 0.23em;
 }
 
 h2 {
