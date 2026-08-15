@@ -477,6 +477,19 @@ em {
   color: var(--color-text-light) !important;
 }
 
+/* Two-column layout helper — wrap two <div> children in <div class="columns2">.
+ * Order in markup is left-to-right; swap the divs to put text or image first. */
+.columns2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em;
+  align-items: center;
+}
+
+.columns2 img {
+  max-width: 100%;
+}
+
 /* Image sizing helpers */
 img[alt~="center"] {
   display: block;
