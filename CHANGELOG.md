@@ -4,6 +4,15 @@ All notable changes to the Marp themes in this repo are documented here.
 Versions correspond to immutable git tags (`vN`) used to pin the jsDelivr CDN
 URL — see `README.md` for the pinning convention and release steps.
 
+## [v16] - 2026-09-30
+
+### Fixed
+
+- `.term-card h3` lost its primary-color styling to the global `h3 { color:
+  var(--color-text) !important; }` rule; mark it `!important` as well so it
+  wins, matching the pattern already used by other heading-level overrides
+  in this theme.
+
 ## [v15] - 2026-09-30
 
 ### Added

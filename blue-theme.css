@@ -618,7 +618,7 @@ img[alt~="large"] {
 .term-card h3 {
   margin: 0.2em 0;
   font-size: 1.2em;
-  color: var(--color-primary);
+  color: var(--color-primary) !important;
 }
 
 .term-card p {

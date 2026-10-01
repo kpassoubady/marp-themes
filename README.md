@@ -26,7 +26,7 @@ returns `Content-Type: text/plain` with `nosniff`, so browser-based Marp preview
 panes (for example cloud IDEs) refuse to apply the stylesheet. jsDelivr returns
 `text/css` with CORS enabled, which every renderer accepts.
 
-Always pin to a version tag (`@v15`), never to `@main`. A branch URL is cached by
+Always pin to a version tag (`@v16`), never to `@main`. A branch URL is cached by
 the client for up to 7 days, so edits do not show up and purging the CDN origin
 does not clear the copy already cached in the browser. A version tag is immutable,
 so its URL is a fresh cache key that loads immediately and never goes stale.
@@ -42,14 +42,14 @@ marp: true
 theme: default
 paginate: true
 style: |
-  @import url("https://cdn.jsdelivr.net/gh/kpassoubady/marp-themes@v15/blue-theme.css");
+  @import url("https://cdn.jsdelivr.net/gh/kpassoubady/marp-themes@v16/blue-theme.css");
 ---
 ```
 
 ### Logo on lead and divider slides
 
 ```html
-<img class="logo" src="https://cdn.jsdelivr.net/gh/kpassoubady/marp-themes@v15/logo-white.svg" />
+<img class="logo" src="https://cdn.jsdelivr.net/gh/kpassoubady/marp-themes@v16/logo-white.svg" />
 ```
 
 ### VS Code (optional registration)
@@ -57,7 +57,7 @@ style: |
 ```json
 {
   "markdown.marp.themes": [
-    "https://cdn.jsdelivr.net/gh/kpassoubady/marp-themes@v15/blue-theme.css"
+    "https://cdn.jsdelivr.net/gh/kpassoubady/marp-themes@v16/blue-theme.css"
   ],
   "markdown.marp.html": "all"
 }
@@ -77,12 +77,12 @@ Because consumers pin to an immutable tag, publishing a theme change means cutti
 a new tag and bumping the references:
 
 ```bash
-# after committing your CSS change (current tag is v15, so cut the next number)
-git tag v16
-git push origin v16
+# after committing your CSS change (current tag is v16, so cut the next number)
+git tag v17
+git push origin v17
 ```
 
-Then update the `@v15` references in the consuming repos to `@v16`. Do not move an
+Then update the `@v16` references in the consuming repos to `@v17`. Do not move an
 existing tag: jsDelivr treats tagged URLs as immutable and caches them for months,
 so a moved tag would serve stale content.
 
