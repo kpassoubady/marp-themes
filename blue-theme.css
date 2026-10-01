@@ -57,8 +57,18 @@ section.lead strong {
  * a high-specificity selector that outranks `section.lead { color: ... }`.
  * Force the light color here the same way h1/h2/strong already do. */
 section.lead p,
-section.lead li {
+section.lead li,
+section.lead blockquote,
+section.lead blockquote p,
+section.lead table,
+section.lead td,
+section.lead th {
   color: #ffffff !important;
+}
+
+section.lead blockquote {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-left-color: var(--color-accent);
 }
 
 section.lead header,
@@ -233,8 +243,18 @@ section.divider strong {
 /* Same fix as section.lead: plain paragraph/list text otherwise inherits
  * Marp's default (dark) text color instead of this theme's light one. */
 section.divider p,
-section.divider li {
+section.divider li,
+section.divider blockquote,
+section.divider blockquote p,
+section.divider table,
+section.divider td,
+section.divider th {
   color: #ffffff !important;
+}
+
+section.divider blockquote {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-left-color: var(--color-accent);
 }
 
 section.divider header,
