@@ -4,6 +4,13 @@ All notable changes to the Marp themes in this repo are documented here.
 Versions correspond to immutable git tags (`vN`) used to pin the jsDelivr CDN
 URL — see `README.md` for the pinning convention and release steps.
 
+## [Unreleased]
+
+### Added
+
+- `.source` footer line and `ul.refs` / `ul.refs.two-col` list styles for citations
+  and the per-day References slide used by the citation skills.
+
 ## [v16] - 2026-09-30
 
 ### Fixed

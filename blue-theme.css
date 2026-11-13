@@ -498,6 +498,16 @@ section.chat-waterfall-answer::before {
  * Signals a real-world scenario callout ahead of the example text. */
 .industry-badge { border-left: 0.25em solid #e65100; background: #fff3e0; padding: 0.3em 0.8em; font-size: 0.78em; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #e65100; margin-bottom: 0.5em; display: inline-block; border-radius: 0 4px 4px 0; }
 
+/* Source citations — pair with course-slide-citation-injector and
+ * course-references-slide-creator. `p.source` is the one-line footer under a
+ * cited claim; `ul.refs.two-col` is the per-day References slide list. */
+.source { margin-top: 0.8em; font-size: 0.6em; color: var(--color-text-light); }
+.source a { color: var(--color-primary-dark); }
+ul.refs { list-style: none; padding-left: 0; }
+ul.refs > li { font-size: 0.6em; line-height: 1.35; margin-bottom: 0.4em; }
+ul.refs.two-col { columns: 2; column-gap: 2.5em; }
+ul.refs.two-col > li { break-inside: avoid; }
+
 /* Emphasis styles */
 strong {
   color: var(--color-primary-dark) !important;
