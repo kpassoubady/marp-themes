@@ -32,9 +32,8 @@ marp --pdf --allow-local-files slides.md
 ## Conventions
 
 - **Versioning is tag-based, not branch-based.** Consumers pin `@import` URLs to
-  an immutable tag (e.g. `@v14`). After committing a CSS change: `git tag vN &&
-  git push origin vN`, then bump the `@vN` references in `README.md` (and in
-  `term-chair/README.md` once that theme is tagged) and in any consuming repos.
+  an immutable release tag (e.g. `@v16`). Use `scripts/bump-version.sh <vN>` to
+  synchronize tag references across `README.md` and `term-chair/README.md`.
   Never move or reuse an existing tag — jsDelivr caches tagged URLs for months.
 - **jsDelivr, not GitHub raw.** `raw.githubusercontent.com` serves
   `text/plain; nosniff`, which browser-based Marp preview panes refuse to apply
@@ -43,5 +42,6 @@ marp --pdf --allow-local-files slides.md
   separate palettes/branding — don't share rules between them; mirror the
   lead/divider slide-type overrides pattern (`section.lead`, `section.divider`)
   within each theme instead.
-- Current latest tag: `v14` (see `README.md` for the canonical pinned example).
+- Check the latest release tag dynamically with `git describe --tags --abbrev=0`.
+  Do not hardcode transient tag numbers in this document.
 </content>

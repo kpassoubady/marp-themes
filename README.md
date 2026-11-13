@@ -74,11 +74,18 @@ The deck's `style` import supplies the theme, so no `--theme` flag is required.
 ## Releasing an update
 
 Because consumers pin to an immutable tag, publishing a theme change means cutting
-a new tag and bumping the references:
+a new tag and bumping the references. Run the helper script to bump `README.md`
+and `term-chair/README.md` together:
 
 ```bash
-# after committing your CSS change (current tag is v16, so cut the next number)
+# 1. Bump documentation references across themes
+./scripts/bump-version.sh v17
+
+# 2. Record release notes in CHANGELOG.md under [v17]
+# 3. Commit, tag, and push
+git commit -am "docs: bump CDN references to v17"
 git tag v17
+git push origin main
 git push origin v17
 ```
 
