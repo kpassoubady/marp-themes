@@ -50,14 +50,14 @@ marp: true
 theme: default
 paginate: true
 style: |
-  @import url("https://cdn.jsdelivr.net/gh/kpassoubady/marp-themes@v16/term-chair/term-chair.css");
+  @import url("https://cdn.jsdelivr.net/gh/kpassoubady/marp-themes@v17/term-chair/term-chair.css");
 ---
 ```
 
 ### Logo on lead and divider slides
 
 ```html
-<img class="logo" src="https://cdn.jsdelivr.net/gh/kpassoubady/marp-themes@v16/term-chair/logo.png" />
+<img class="logo" src="https://cdn.jsdelivr.net/gh/kpassoubady/marp-themes@v17/term-chair/logo.png" />
 ```
 
 ### The `.term` slide class
@@ -109,7 +109,7 @@ mix a book-chapter teach-back with a quick poll or open discussion slide.
 ```json
 {
   "markdown.marp.themes": [
-    "https://cdn.jsdelivr.net/gh/kpassoubady/marp-themes@v16/term-chair/term-chair.css"
+    "https://cdn.jsdelivr.net/gh/kpassoubady/marp-themes@v17/term-chair/term-chair.css"
   ],
   "markdown.marp.html": "all"
 }

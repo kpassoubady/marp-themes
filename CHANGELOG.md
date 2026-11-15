@@ -11,6 +11,14 @@ URL — see `README.md` for the pinning convention and release steps.
 - `.source` footer line and `ul.refs` / `ul.refs.two-col` list styles for citations
   and the per-day References slide used by the citation skills.
 
+## [v17] - 2026-11-14
+
+### Added
+
+- `interactive-embed.css`: shared thumbnail style (`.interactive-card`, `.interactive-thumb`,
+  `.interactive-caption`, `.interactive-title`) for archify interactive-diagram links.
+  Paste into a `<style>` block in the deck; also works in Reveal.js.
+
 ## [v16] - 2026-09-30
 
 ### Fixed
