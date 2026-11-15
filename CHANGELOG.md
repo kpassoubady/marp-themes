@@ -6,10 +6,15 @@ URL — see `README.md` for the pinning convention and release steps.
 
 ## [Unreleased]
 
+## [v18] - 2026-11-14
+
 ### Added
 
 - `.source` footer line and `ul.refs` / `ul.refs.two-col` list styles for citations
   and the per-day References slide used by the citation skills.
+- `section.connect` closing-slide layout (`<!-- _class: connect -->`) in `blue-theme.css`:
+  centered title with accent rule, LinkedIn-style card for a QR image, pill button,
+  and hint text. Mirrors the `.connect` layout in revealjs-theme.
 
 ## [v17] - 2026-11-14
 
