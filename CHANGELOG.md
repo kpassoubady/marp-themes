@@ -6,6 +6,13 @@ URL — see `README.md` for the pinning convention and release steps.
 
 ## [Unreleased]
 
+## [v19] - 2026-11-14
+
+### Fixed
+
+- `section.connect .connect-btn` background is now `!important`, so a viewer's
+  default link styling cannot turn the LinkedIn pill white and hide its label.
+
 ## [v18] - 2026-11-14
 
 ### Added

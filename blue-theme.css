@@ -152,7 +152,7 @@ section.connect .connect-btn {
   gap: 10px;
   margin-top: 12px;
   padding: 10px 26px;
-  background: #0a66c2;
+  background: #0a66c2 !important;
   color: #ffffff !important;
   font-size: 0.65em;
   font-weight: 600;
